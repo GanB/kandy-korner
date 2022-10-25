@@ -1,0 +1,11 @@
+.locations {
+  display: flex;
+  flex-direction: column;
+}
+
+.location {
+  background-color: rgb(197, 199, 238);
+  border: 1px dotted rgb(5, 9, 36);
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+}
