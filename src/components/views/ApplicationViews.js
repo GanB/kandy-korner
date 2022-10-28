@@ -1,5 +1,6 @@
 import { Outlet, Route, Routes } from "react-router-dom";
 import { Locations } from "../locations/Locations";
+import { Products } from "../Products/Products";
 // import { TicketForm } from "../tickets/TicketForm";
 
 export const ApplicationViews = () => {
@@ -17,6 +18,7 @@ export const ApplicationViews = () => {
         }
       >
         <Route path="locations" element={<Locations />} />
+        <Route path="products" element={<Products />} />
         {/* <Route path="ticket/create" element={<TicketForm />} /> */}
       </Route>
     </Routes>
