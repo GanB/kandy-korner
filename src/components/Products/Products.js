@@ -14,7 +14,9 @@ export const Products = () => {
     () => {
       // console.log("Initial state of tickets", tickets); // View the initial state of tickets
       const fetchData = async () => {
-        const response = await fetch(`http://localhost:8088/products`);
+        const response = await fetch(
+          `http://localhost:8088/products?_sort=productName&_expand=productType`
+        );
         const productsArray = await response.json();
         productsArray.sort((a, b) => {
           if (a.productName.toLowerCase() < b.productName.toLowerCase())
@@ -66,33 +68,33 @@ export const Products = () => {
           </button>
         </>
       ) : (
-        <>
-          {/* <button onClick={() => navigate("/ticket/create")}>
-            Create Ticket
-          </button>
-          <button onClick={() => setIsTicketOpen(true)}>Open Tickets</button>
-          <button onClick={() => setIsTicketOpen(false)}>All My Tickets</button> */}
-        </>
+        <></>
       )}
       <article className="products">
         <table>
-          <tr className="tableheader">
-            <th>Product Name</th>
-            <th>Price</th>
-          </tr>
-          {filteredProducts.map((product) => {
-            return (
-              <tr>
-                <td>{product.productName}</td>
-                <td>
-                  {product.price.toLocaleString("en-US", {
-                    style: "currency",
-                    currency: "USD",
-                  })}
-                </td>
-              </tr>
-            );
-          })}
+          <thead>
+            <tr className="tableheader">
+              <th>Product Name</th>
+              <th>Price</th>
+              <th>Product Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filteredProducts.map((product) => {
+              return (
+                <tr key={product.id}>
+                  <td>{product.productName}</td>
+                  <td className="currency">
+                    {product.price.toLocaleString("en-US", {
+                      style: "currency",
+                      currency: "USD",
+                    })}
+                  </td>
+                  <td>{product.productType.category}</td>
+                </tr>
+              );
+            })}
+          </tbody>
         </table>
       </article>
     </>

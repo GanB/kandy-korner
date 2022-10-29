@@ -26,3 +26,7 @@ td {
   font-weight: 900;
   font-size: large;
 }
+
+.currency {
+  text-align: right;
+}

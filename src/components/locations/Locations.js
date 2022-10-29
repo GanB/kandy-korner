@@ -26,18 +26,22 @@ export const Locations = () => {
       <h2>Store Locations</h2>
       <article className="locations">
         <table>
-          <tr className="tableheader">
-            <th>Address</th>
-            <th>SqFt</th>
-          </tr>
-          {locations.map((location) => {
-            return (
-              <tr>
-                <td>{location.address}</td>
-                <td>{location.sqft.toLocaleString()}</td>
-              </tr>
-            );
-          })}
+          <thead>
+            <tr className="tableheader">
+              <th>Address</th>
+              <th>SqFt</th>
+            </tr>
+          </thead>
+          <tbody>
+            {locations.map((location) => {
+              return (
+                <tr key={location.id}>
+                  <td>{location.address}</td>
+                  <td className="number">{location.sqft.toLocaleString()}</td>
+                </tr>
+              );
+            })}
+          </tbody>
         </table>
       </article>
     </>
