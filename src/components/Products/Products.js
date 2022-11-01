@@ -52,6 +52,7 @@ export const Products = () => {
       <h2>Products</h2>
       {kandyUserObject.staff ? (
         <>
+          <button onClick={() => navigate("/product/add")}>Add Product</button>
           <button
             onClick={() => {
               setIsTopPricedFilter(true);

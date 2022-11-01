@@ -30,3 +30,24 @@ td {
 .currency {
   text-align: right;
 }
+
+.btn-primary {
+  background-color: #072750;
+  color: white;
+  padding: 5px;
+  margin: 5px;
+}
+
+.btn-disabled {
+  /* background-color: #072750;
+  color: white; */
+  padding: 5px;
+  margin: 5px;
+}
+
+.btn-cancel {
+  background-color: #072750;
+  color: white;
+  padding: 5px;
+  margin: 5px;
+}
